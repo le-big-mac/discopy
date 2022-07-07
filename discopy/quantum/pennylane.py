@@ -200,6 +200,14 @@ class PennyLaneCircuit:
         self._post_selection = post_selection_dict
         self._valid_states = self.get_valid_states()
 
+<<<<<<< HEAD
+=======
+    @property
+    def valid_states(self):
+        """The states compatible with the post-selections."""
+        return self._valid_states
+
+>>>>>>> upstream/main
     def contains_sympy(self):
         """
         Determine if the circuit parameters are

@@ -212,12 +212,20 @@ def test_pennylane_update_post_selection():
     p_circ = snake.to_pennylane()
 
     assert p_circ.post_selection == {0: 0, 1: 0}
+<<<<<<< HEAD
     assert p_circ._valid_states == [0, 1]
+=======
+    assert p_circ.valid_states == [0, 1]
+>>>>>>> upstream/main
 
     p_circ.post_selection = {0: 0, 2: 0}
 
     assert p_circ.post_selection == {0: 0, 2: 0}
+<<<<<<< HEAD
     assert p_circ._valid_states == [0, 2]
+=======
+    assert p_circ.valid_states == [0, 2]
+>>>>>>> upstream/main
 
 
 def test_Sum_from_tk():
