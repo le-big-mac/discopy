@@ -227,7 +227,7 @@ class PennyLaneCircuit:
             self._concrete_params = None
         else:
             self._concrete_params = [torch.cat(p) if len(p) > 0
-                                    else p for p in self._params]
+                                     else p for p in self._params]
         self._device = self.get_device(copy.copy(backend_config))
         self._circuit = self.make_circuit()
         self._valid_states = self.get_valid_states()
@@ -297,7 +297,8 @@ class PennyLaneCircuit:
             raise ValueError('Cannot draw circuit with symbolic parameters. '
                              'Initialise concrete parameters first.')
 
-        wires = qml.draw(self.make_circuit())(self._concrete_params).split("\n")
+        wires = (qml.draw(self.make_circuit())
+                 (self._concrete_params).split("\n"))
         for k, v in self._post_selection.items():
             wires[k] = wires[k].split("┤")[0] + "┤" + str(v) + ">"
 
